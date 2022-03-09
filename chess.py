@@ -86,7 +86,7 @@ def pawn_move(start, raw):
 def kingMove(start, raw):
     current_pos = int(input('From (raw no) : '))
     if start[0] == 'b':
-        if raw > 1:
+        if raw >= 0:
             pos = board[current_pos].index(start) #to
             distance = raw - current_pos   # This is for pawn step tracking
             if board[raw][pos] == '   ' and distance == 1:
@@ -123,6 +123,7 @@ while True:
         kingMove(start, raw)
     else:
         print('Wrong inpu')
+
     printBoard()
        
 
